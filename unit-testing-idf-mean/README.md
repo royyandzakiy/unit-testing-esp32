@@ -1,11 +1,15 @@
-ESP-IDF template app
-====================
+# Unit Testing in ESP IDF "Mean"
 
-This is a template application to be used with [Espressif IoT Development Framework](https://github.com/espressif/esp-idf).
+This project is implemented by following [this example code](https://github.com/espressif/esp-idf/blob/master/examples/system/unit_test/README.md) from esp idf
 
-Please check [ESP-IDF docs](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/index.html) for getting started instructions.
+This example contains two projects: application project and test project.
 
-*Code in this repository is in the Public Domain (or CC0 licensed, at your option.)
-Unless required by applicable law or agreed to in writing, this
-software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-CONDITIONS OF ANY KIND, either express or implied.*
+1. Application project calls an API defined in the component, and displays the results. It is not of much value to run. Application project is provided mainly to illustrate the layout of all the files. If you decide to run this project, the procedure is:
+
+    * Run `idf.py -p PORT flash monitor` in the current directory (`unit_test`).
+    * Observe the output: a list of random numbers and their mean value.
+
+2. Test project is responsible for running the tests.
+
+	* Enter `test` directory (`unit_test/test`), and run `idf.py -p PORT flash monitor`.
+	* Observe the output: results of test case execution.
